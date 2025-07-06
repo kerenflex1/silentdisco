@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="80" height="80">
+  <!-- גוף המכשיר -->
+  <rect x="16" y="8" width="32" height="48" rx="4" ry="4" stroke="currentColor" stroke-width="4" fill="none"></rect>
+  <!-- כפתור תחתון -->
+  <rect x="28" y="52" width="8" height="4" fill="currentColor"></rect>
+  <!-- רמקול עליון -->
+  <rect x="24" y="12" width="16" height="2" fill="currentColor"></rect>
+</svg>
