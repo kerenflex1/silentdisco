@@ -13,26 +13,26 @@
   <style>
     #hero {
       height:100vh;
-      background:url('assets/images/hero.jpg') center/cover no-repeat;
+      background:url('./assets/images/hero.jpg') center/cover no-repeat;
       position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
     }
     .hero-overlay {
-      position:absolute;top:0;left:0;width:100%;height:100%;
+      position:absolute; top:0; left:0; width:100%; height:100%;
       background:rgba(0,0,0,0.5);
     }
     .hero-content {
-      z-index:2;text-align:center;color:#fff;padding:0 1rem;
+      z-index:2; text-align:center; color:#fff; padding:0 1rem;
     }
-    .hero-content h1 {font-size:2.5rem; margin-bottom:1rem;}
-    .hero-content p  {font-size:1.1rem; margin-bottom:1.5rem;}
+    .hero-content h1 { font-size:2.5rem; margin-bottom:1rem; }
+    .hero-content p  { font-size:1.1rem; margin-bottom:1.5rem; }
   </style>
 
   <!-- Preload & Styles -->
-+ <link rel="preload" href="assets/css/style.css" as="style">
-+ <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="preload" href="assets/css/style.css" as="style">
+  <link href="assets/css/style.css" rel="stylesheet">
   <noscript><link href="assets/css/style.css" rel="stylesheet"></noscript>
 
   <!-- Favicon & PWA -->
@@ -130,106 +130,4 @@
           <h3>איכות סאונד Hi-Fi</h3>
           <p>שמע נקי ומדויק, איזון תדרים מקצועי לחוויה אולפנית.</p>
         </div>
-        <div class="feature-card" role="region" aria-label="סוללה ל-12 שעות">
-          <img src="assets/images/feature2.png" alt="אייקון סוללה" loading="lazy">
-          <h3>סוללה ל-12 שעות</h3>
-          <p>טעינה מהירה וביצועים יציבים לכל האירוע—ללא הפסקות.</p>
-        </div>
-        <div class="feature-card" role="region" aria-label="עד 3 ערוצים">
-          <img src="assets/images/feature3.png" alt="אייקון ערוצים" loading="lazy">
-          <h3>עד 3 ערוצים</h3>
-          <p>חלוקת מוזיקה לפי טעם אישי—כל משתתף בוחר לעצמו.</p>
-        </div>
-        <div class="feature-card" role="region" aria-label="ניידות מלאה">
-          <img src="assets/images/feature4.png" alt="אייקון ניידות" loading="lazy">
-          <h3>ניידות מלאה</h3>
-          <p>אירועים בפנים או בחוץ, ללא תלות בתשתיות והיתרי רעש.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing teaser -->
-    <section id="pricing" aria-labelledby="pricing-heading">
-      <h2 id="pricing-heading">בחר חבילה</h2>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Basic</h3>
-          <p><strong>₪1,200</strong></p>
-          <ul>
-            <li>10 אוזניות</li>
-            <li>עד 4 שעות</li>
-            <li>ערוץ מוזיקה אחד</li>
-          </ul>
-        </div>
-        <div class="pricing-card recommended" aria-label="החבילה המומלצת">
-          <h3>Standard</h3>
-          <p><strong>₪2,200</strong></p>
-          <ul>
-            <li>20 אוזניות</li>
-            <li>עד 6 שעות</li>
-            <li>עד 2 ערוצים</li>
-          </ul>
-        </div>
-        <div class="pricing-card">
-          <h3>Premium</h3>
-          <p><strong>₪4,500</strong></p>
-          <ul>
-            <li>50 אוזניות</li>
-            <li>אירוע לכל היום</li>
-            <li>עד 3 ערוצים + תמיכה טכנית</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pricing-cta">
-        <a href="contact.html" class="btn-secondary" role="button">להזמנת חבילה</a>
-      </div>
-    </section>
-
-    <!-- Gallery teaser -->
-    <section id="gallery" aria-labelledby="gallery-heading">
-      <h2 id="gallery-heading">הצצה לאירועים</h2>
-      <div class="gallery-grid">
-        <img src="assets/images/gallery1.jpg" alt="מסיבת Silent Disco ברחוב" loading="lazy" data-full="assets/images/gallery1.jpg">
-        <img src="assets/images/gallery2.jpg" alt="קהל רוקד עם אוזניות" loading="lazy" data-full="assets/images/gallery2.jpg">
-        <img src="assets/images/gallery3.jpg" alt="אירוע ערב בגן" loading="lazy" data-full="assets/images/gallery3.jpg">
-        <img src="assets/images/gallery4.jpg" alt="DJ עם אוזניות" loading="lazy" data-full="assets/images/gallery4.jpg">
-      </div>
-      <div class="gallery-cta">
-        <a href="gallery.html" class="btn-secondary" role="button">לגלריה מלאה</a>
-      </div>
-    </section>
-
-    <!-- Blog teaser -->
-    <section id="blog" aria-labelledby="blog-heading">
-      <h2 id="blog-heading">מה חדש בבלוג</h2>
-      <ul class="blog-list">
-        <li><a href="blog.html#post1">מסיבת Silent Disco – טרנד שאי אפשר לפספס!</a></li>
-        <li><a href="blog.html#post2">מדריך עיצוב למסיבות Silent Disco שיצטלמו מדהים</a></li>
-        <li><a href="blog.html#post3">איך להפוך את מסיבת ה-Silent Disco שלך לויראלית?</a></li>
-      </ul>
-      <div class="blog-cta">
-        <a href="blog.html" class="btn-secondary" role="button">לכל הפוסטים</a>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="footer-nav">
-      <a href="about.html">אודות</a>
-      <a href="privacy.html">מדיניות פרטיות</a>
-      <a href="terms.html">תנאי שימוש</a>
-      <a href="contact.html">צור קשר</a>
-    </div>
-    <p>&copy; 2025 Silent Disco. כל הזכויות שמורות.</p>
-  </footer>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="lightbox-close" aria-label="סגור">×</button>
-    <img class="lightbox-img" src="" alt="">
-  </div>
-
-  <!-- Main JS (deferred) -->
-  <script src="assets/js/main.min.js" defer></script>
-</body>
-</html>
+        <div class="feature-card" role="region" aria-label="סוללה ל-12
