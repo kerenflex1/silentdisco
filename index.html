@@ -2,75 +2,90 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
   <title>Silent Disco – השכרת אוזניות אלחוטיות למסיבות | חוויה ייחודית בלי רעש</title>
   <meta name="description" content="השכרת אוזניות אלחוטיות מהדור הבא למסיבות Silent Disco: איכות Hi-Fi, סוללה ל-12 שעות, שידור עד 3 ערוצים, וללא מטרד רעש.">
-  <meta name="keywords" content="Silent Disco, Silent Disco ישראל, מסיבת אוזניות, השכרת אוזניות אלחוטיות, מסיבת אוזניות אלחוטיות, Silent Party, השכרת אוזניות למסיבה">
+  <meta name="keywords" content="Silent Disco,מסיבת אוזניות,השכרת אוזניות אלחוטיות,Silent Party,Silent Disco ישראל">
   <link rel="canonical" href="https://silentdiscotlv.co.il/index.html">
   <meta name="theme-color" content="#e91e63">
 
-  <!-- Preload critical assets -->
+  <!-- Critical CSS (above-the-fold: Hero) -->
+  <style>
+    #hero {
+      height:100vh;
+      background:url('assets/images/hero.jpg') center/cover no-repeat;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-overlay {
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      z-index:2;text-align:center;color:#fff;padding:0 1rem;
+    }
+    .hero-content h1 {font-size:2.5rem; margin-bottom:1rem;}
+    .hero-content p  {font-size:1.1rem; margin-bottom:1.5rem;}
+  </style>
+
+  <!-- Preload & Styles -->
   <link rel="preload" href="assets/css/style.min.css" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" as="style">
+  <link href="assets/css/style.min.css" rel="stylesheet">
+  <noscript><link href="assets/css/style.min.css" rel="stylesheet"></noscript>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.min.css">
-  <noscript>
-    <link rel="stylesheet" href="assets/css/style.min.css">
-  </noscript>
-
-  <!-- Favicon & PWA manifest -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Favicon & PWA -->
+  <link rel="icon" href="favicon.ico">
   <link rel="manifest" href="manifest.json">
 
-  <!-- Open Graph & Twitter Card -->
+  <!-- Open Graph & Twitter -->
   <meta property="og:title" content="Silent Disco – השכרת אוזניות אלחוטיות למסיבות">
-  <meta property="og:description" content="חוויה חברתית ייחודית עם אוזניות אלחוטיות למסיבת Silent Disco – בלי רעש, בלי מטרד, רק מוזיקה ואווירה.">
+  <meta property="og:description" content="חוויה חברתית ייחודית עם אוזניות אלחוטיות למסיבת Silent Disco – בלי רעש, רק מוזיקה ואווירה.">
   <meta property="og:image" content="https://silentdiscotlv.co.il/assets/images/og-image.jpg">
-  <meta property="og:url" content="https://silentdiscotlv.co.il/index.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url"   content="https://silentdiscotlv.co.il/index.html">
+  <meta property="og:type"  content="website">
+  <meta name="twitter:card"  content="summary_large_image">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD LocalBusiness -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Silent Disco",
-    "image": "https://silentdiscotlv.co.il/assets/images/hero.jpg",
-    "telephone": "+972541234567",
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Silent Disco",
+    "image":"https://silentdiscotlv.co.il/assets/images/hero.jpg",
+    "telephone":"+972541234567",
     "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "תל אביב",
-      "addressCountry": "IL"
+      "@type":"PostalAddress",
+      "addressLocality":"תל אביב",
+      "addressCountry":"IL"
     },
-    "url": "https://silentdiscotlv.co.il/index.html",
-    "description": "השכרת אוזניות אלחוטיות לאירועי Silent Disco בכל מקום ובכל שעה."
+    "url":"https://silentdiscotlv.co.il/index.html",
+    "description":"השכרת אוזניות אלחוטיות לאירועי Silent Disco בכל מקום ובכל שעה."
   }
   </script>
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); 
+    gtag('js',new Date());
+    gtag('config','G-XXXXXXX');
   </script>
 
   <!-- Facebook Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'XXXXXXXXXXXXXXX');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s){
+    if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','XXXXXXXXXXXXXXX');
+  fbq('track','PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
@@ -80,8 +95,8 @@
 
 <body>
   <header>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-      <a href="index.html" class="logo" aria-label="Silent Disco – חזרה לדף הבית">
+    <nav class="navbar" role="navigation" aria-label="תפריט ראשי">
+      <a href="index.html" class="logo" aria-label="Silent Disco – דף הבית">
         <img src="assets/images/sd_logo.png" alt="לוגו Silent Disco" loading="lazy">
       </a>
       <button class="hamburger" aria-label="פתח תפריט" aria-expanded="false">☰</button>
@@ -97,7 +112,7 @@
 
   <main>
     <!-- Hero -->
-    <section id="hero" class="hero" role="banner">
+    <section id="hero" role="banner">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Silent Disco – חוויה מוסיקלית ללא רעש</h1>
@@ -107,34 +122,34 @@
     </section>
 
     <!-- Features -->
-    <section id="features" class="features" aria-labelledby="features-heading">
+    <section id="features" aria-labelledby="features-heading">
       <h2 id="features-heading">למה לבחור ב-Silent Disco?</h2>
       <div class="features-grid">
-        <div class="feature-card" role="region" aria-label="איכות סאונד">
-          <img src="assets/images/feature1.png" alt="איקון סאונד" loading="lazy">
+        <div class="feature-card" role="region" aria-label="איכות סאונד Hi-Fi">
+          <img src="assets/images/feature1.png" alt="אייקון איכות סאונד" loading="lazy">
           <h3>איכות סאונד Hi-Fi</h3>
-          <p>שמע נקי ומדויק, איזון תדרים מקצועי לחוות מוזיקה כמו באולפן.</p>
+          <p>שמע נקי ומדויק, איזון תדרים מקצועי לחוויה אולפנית.</p>
         </div>
-        <div class="feature-card" role="region" aria-label="סוללה ארוכה">
-          <img src="assets/images/feature2.png" alt="איקון סוללה" loading="lazy">
+        <div class="feature-card" role="region" aria-label="סוללה ל-12 שעות">
+          <img src="assets/images/feature2.png" alt="אייקון סוללה" loading="lazy">
           <h3>סוללה ל-12 שעות</h3>
-          <p>טעינה מהירה וביצועים יציבים לכל הארוע – ללא הפסקות.</p>
+          <p>טעינה מהירה וביצועים יציבים לכל האירוע—ללא הפסקות.</p>
         </div>
-        <div class="feature-card" role="region" aria-label="שידור מרובה ערוצים">
-          <img src="assets/images/feature3.png" alt="איקון ערוצים" loading="lazy">
+        <div class="feature-card" role="region" aria-label="עד 3 ערוצים">
+          <img src="assets/images/feature3.png" alt="אייקון ערוצים" loading="lazy">
           <h3>עד 3 ערוצים</h3>
-          <p>חלוקת מוזיקה לפי טעם אישי – כל משתתף בוחר לעצמו.</p>
+          <p>חלוקת מוזיקה לפי טעם אישי—כל משתתף בוחר לעצמו.</p>
         </div>
         <div class="feature-card" role="region" aria-label="ניידות מלאה">
-          <img src="assets/images/feature4.png" alt="איקון ניידות" loading="lazy">
+          <img src="assets/images/feature4.png" alt="אייקון ניידות" loading="lazy">
           <h3>ניידות מלאה</h3>
-          <p>אירועים בפנים או בחוץ, ללא תלות בתשתיות והיתרים לרעש.</p>
+          <p>אירועים בפנים או בחוץ, ללא תלות בתשתיות והיתרי רעש.</p>
         </div>
       </div>
     </section>
 
     <!-- Pricing teaser -->
-    <section id="pricing" class="pricing" aria-labelledby="pricing-heading">
+    <section id="pricing" aria-labelledby="pricing-heading">
       <h2 id="pricing-heading">בחר חבילה</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
@@ -171,7 +186,7 @@
     </section>
 
     <!-- Gallery teaser -->
-    <section id="gallery" class="gallery" aria-labelledby="gallery-heading">
+    <section id="gallery" aria-labelledby="gallery-heading">
       <h2 id="gallery-heading">הצצה לאירועים</h2>
       <div class="gallery-grid">
         <img src="assets/images/gallery1.jpg" alt="מסיבת Silent Disco ברחוב" loading="lazy" data-full="assets/images/gallery1.jpg">
@@ -185,7 +200,7 @@
     </section>
 
     <!-- Blog teaser -->
-    <section id="blog" class="blog-teaser" aria-labelledby="blog-heading">
+    <section id="blog" aria-labelledby="blog-heading">
       <h2 id="blog-heading">מה חדש בבלוג</h2>
       <ul class="blog-list">
         <li><a href="blog.html#post1">מסיבת Silent Disco – טרנד שאי אפשר לפספס!</a></li>
@@ -198,7 +213,7 @@
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer role="contentinfo">
     <div class="footer-nav">
       <a href="about.html">אודות</a>
       <a href="privacy.html">מדיניות פרטיות</a>
@@ -214,7 +229,7 @@
     <img class="lightbox-img" src="" alt="">
   </div>
 
-  <!-- Main JavaScript -->
-  <script src="assets/js/main.js" defer></script>
+  <!-- Main JS (deferred) -->
+  <script src="assets/js/main.min.js" defer></script>
 </body>
 </html>
