@@ -1,15 +1,16 @@
-// JavaScript functionality for Silent Disco site
+// assets/js/main.js
 
-// Ensure DOM is loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
-  // Hamburger Menu Toggle
+  // 1) Hamburger Menu Toggle – רק אם האלמנטים קיימים
   const hamb = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
-  hamb.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
+  if (hamb && navLinks) {
+    hamb.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  }
 
-  // Smooth Scrolling for internal links
+  // 2) Smooth Scrolling לעוגנים פנימיים
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -20,27 +21,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Lightbox for gallery images
-  const images = document.querySelectorAll('.gallery-grid img');
+  // 3) Lightbox – רק אם קיימת גלריה ו־lightbox בדף
   const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('.lightbox-img');
-  const lightboxClose = lightbox.querySelector('.close');
+  if (lightbox) {
+    const lightboxImg   = lightbox.querySelector('.lightbox-img');
+    const lightboxClose = lightbox.querySelector('.close');
+    const galleryImages = document.querySelectorAll('.gallery-grid img');
 
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = img.dataset.full;
+    // פתיחת Lightbox בלחיצה על תמונה
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        // אם יש dataset.full קח אותו, אחרת – src
+        lightboxImg.src = img.dataset.full || img.src;
+      });
     });
-  });
 
-  // Close lightbox on close button click or outside click
-  lightboxClose.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
+    // סגירת Lightbox
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
     }
-  });
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  }
 });
- 
