@@ -221,6 +221,16 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* מבטיח ריווח לפני הכפתור ומרכז את הלינק */
+#pricing .pricing-grid {
+  margin-bottom: 2rem;    /* ריווח למטה */
+}
+
+#pricing .btn-secondary {
+  display: block;         /* כדי שהמרווח והמרכוז יעבדו */
+  margin: 2rem auto 0;    /* למעלה 2rem, אמצע אוטומטי, למטה 0 */
+}
+
 /* Pricing */
 .pricing-grid {
   display: grid;
