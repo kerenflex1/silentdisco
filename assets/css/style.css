@@ -234,3 +234,9 @@ h2 {
 /* Pricing */
 .pricing-grid {
   display: grid;
+
+  .logo img {
+  height: 40px;      /* גובה מותאם */
+  width: auto;       /* לשמור על הפרופורציות */
+}
+
