@@ -6,7 +6,9 @@
   --transition: 0.3s ease;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -61,7 +63,7 @@ a:hover {
   cursor: pointer;
 }
 
-/* Responsive Nav */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -83,7 +85,7 @@ a:hover {
   }
 }
 
-/* Hero */
+/* Hero Section */
 #hero {
   height: 100vh;
   background: url('../images/hero.jpg') center/cover no-repeat;
@@ -94,8 +96,10 @@ a:hover {
 }
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 .hero-content {
@@ -157,7 +161,7 @@ a:hover {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Sections */
+/* Section Base */
 section {
   padding: 6rem 2rem;
   margin-top: 4rem;
@@ -213,10 +217,6 @@ h2 {
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-#pricing .btn-secondary {
-  display: block;
-  margin: 2rem auto 0;
-}
 
 /* Gallery */
 .gallery-grid {
@@ -234,7 +234,7 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Blog teaser */
+/* Blog Teaser */
 .blog-list {
   list-style: none;
   text-align: center;
@@ -250,8 +250,10 @@ h2 {
 .lightbox {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
@@ -262,7 +264,8 @@ h2 {
 }
 .lightbox .close {
   position: absolute;
-  top: 20px; right: 30px;
+  top: 20px;
+  right: 30px;
   font-size: 2rem;
   color: var(--color-white);
   cursor: pointer;
@@ -282,9 +285,11 @@ footer {
   font-weight: 500;
 }
 
-/* Responsive tweaks */
+/* Responsive Tweaks */
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 2rem; }
   .hero-content p  { font-size: 1rem; }
-  .btn-primary, .btn-secondary { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+  .btn-primary,
+  .btn-secondary { padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+  .navbar { padding: 1rem; }
 }
