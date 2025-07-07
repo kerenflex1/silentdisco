@@ -1,52 +1,35 @@
-// assets/js/main.js
-
-document.addEventListener('DOMContentLoaded', () => {
-  // 1) Hamburger Menu Toggle – רק אם האלמנטים קיימים
-  const hamb = document.querySelector('.hamburger');
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.querySelector('.nav-links');
-  if (hamb && navLinks) {
-    hamb.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  }
 
-  // 2) Smooth Scrolling לעוגנים פנימיים
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
+  menuToggle.addEventListener('click', function() {
+    document.body.classList.toggle('nav-open');
+  });
+
+  // Close menu when a link is clicked (mobile)
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.body.classList.remove('nav-open');
     });
   });
 
-  // 3) Lightbox – רק אם קיימת גלריה ו־lightbox בדף
-  const lightbox = document.getElementById('lightbox');
-  if (lightbox) {
-    const lightboxImg   = lightbox.querySelector('.lightbox-img');
-    const lightboxClose = lightbox.querySelector('.close');
-    const galleryImages = document.querySelectorAll('.gallery-grid img');
-
-    // פתיחת Lightbox בלחיצה על תמונה
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        // אם יש dataset.full קח אותו, אחרת – src
-        lightboxImg.src = img.dataset.full || img.src;
+  // Share button functionality
+  const shareBtn = document.querySelector('.share-btn');
+  shareBtn.addEventListener('click', function() {
+    const shareData = {
+      title: document.title,
+      text: 'בדקי את Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות',
+      url: window.location.href
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(console.error);
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareData.url).then(function() {
+        alert('הקישור הועתק ללוח');
       });
-    });
-
-    // סגירת Lightbox
-    if (lightboxClose) {
-      lightboxClose.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-      });
+    } else {
+      prompt('העתק ושתף את הקישור:', shareData.url);
     }
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-  }
+  });
 });
