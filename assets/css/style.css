@@ -209,5 +209,34 @@ footer {
   color: #fff;
   font-weight: 500;
 }
+
+.scroll-down {
+  display: block;
+  margin: 2rem auto 1rem;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  animation: bounce 1.8s infinite;
+  text-decoration: none;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.video-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #f8f8f8;
+}
+
+.video-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+
 /* Utility */
 .hidden { display: none !important; }
