@@ -5,25 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות</title>
   <meta name="description" content="Silent Disco TLV – עושים מסיבות בלי רעש. השכרת אוזניות Hi-Fi ל-12 שעות, שלושה ערוצים, ניידות מלאה וחוויית קול מקצועית."/>
-  <link href="https://silentdiscotlv.co.il/index.html" rel="canonical"/>
+  <link rel="canonical" href="https://silentdiscotlv.co.il/index.html"/>
   <meta name="robots" content="index,follow"/>
+
   <!-- Open Graph -->
   <meta property="og:site_name" content="Silent Disco TLV"/>
   <meta property="og:title" content="Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות"/>
   <meta property="og:description" content="Silent Disco TLV – השכרת אוזניות Hi-Fi ללא רעש ל-12 שעות, ערוצים נפרדים וניידות מלאה."/>
   <meta property="og:image" content="https://silentdiscotlv.co.il/assets/images/hero.jpg"/>
   <meta property="og:url" content="https://silentdiscotlv.co.il/index.html"/>
+
   <link rel="icon" href="favicon.ico"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
   <style>
-    /* Share button styling */
-    .share-btn { background: none; border: none; cursor: pointer; padding: 0; margin-left: 1rem; }
-    .share-btn img { width: 24px; height: auto; }
-    /* Section padding */
-    section { padding: 4rem 1rem; }
-    @media (min-width: 768px) { section { padding: 6rem 2rem; } }
+    .share-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 1rem;
+    }
+    .share-btn img {
+      width: 24px;
+      height: auto;
+    }
+    section {
+      padding: 4rem 1rem;
+    }
+    @media (min-width: 768px) {
+      section {
+        padding: 6rem 2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header>
@@ -41,35 +57,35 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero" style="background: url('assets/images/hero.jpg') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center;">
+    <!-- HERO -->
+    <section id="hero" class="hero" style="background: url('assets/images/hero.jpg') center/cover no-repeat;">
       <div class="container hero-content">
         <h1>Silent Disco TLV</h1>
         <p>חוויה אלחוטית בלי רעש – מסיבות עם אוזניות Hi-Fi לכל המשתתפים.</p>
         <a class="btn-primary" href="contact.html">השכרה עכשיו</a>
       </div>
+      <a href="#features-list" class="scroll-down" aria-label="גלול למטה">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </section>
-    
-    <a href="#features-list" class="scroll-down" aria-label="גלול למטה">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-        <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-    <section id="video-intro" class="container video-section">
-  <h2>איך זה נראה בלייב?</h2>
-  <p>הצצה למסיבת Silent Disco שלנו – צפו כדי להבין את החוויה.</p>
-  <div class="video-wrapper">
-    <video controls poster="assets/images/video-cover.png" style="width:100%; max-width:720px; border-radius:1rem;">
-      <source src="assets/video/silent-disco-demo.mp4" type="video/mp4">
-      הדפדפן שלך לא תומך בסרטונים.
-    </video>
-  </div>
-</section>
 
-    
-    <!-- FEATURES SECTION -->
+    <!-- VIDEO -->
+    <section id="video-intro" class="container video-section">
+      <h2>איך זה נראה בלייב?</h2>
+      <p>הצצה למסיבת Silent Disco שלנו – צפו כדי להבין את החוויה.</p>
+      <div class="video-wrapper">
+        <video controls poster="assets/images/video-cover.png" style="width:100%; max-width:720px; border-radius:1rem;">
+          <source src="assets/video/silent-disco-demo.mp4" type="video/mp4">
+          הדפדפן שלך לא תומך בסרטונים.
+        </video>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
     <section id="features-list" class="container features-grid">
       <h2>התכונות שלנו</h2>
       <article class="feature-card">
@@ -90,7 +106,7 @@
       <article class="feature-card">
         <img src="assets/icons/mobile.svg" alt="ניידות מלאה" width="80" height="80" loading="lazy"/>
         <h3>ניידות מלאה</h3>
-        <p>התקנה מהירה ופשטות תפעול – מושלם לאירועים בתוך הבית ובחוץ, בלי צורך ברישיון רעש.</p>
+        <p>התקנה מהירה ופשטות תפעול – מושלם לאירועים בבית ובחוץ, בלי צורך ברישיון רעש.</p>
       </article>
       <article class="feature-card">
         <img src="assets/icons/easy.svg" alt="תפעול אינטואיטיבי" width="80" height="80" loading="lazy"/>
@@ -99,7 +115,7 @@
       </article>
     </section>
 
-    <!-- PRICING SECTION -->
+    <!-- PRICING -->
     <section id="pricing" class="container pricing-grid">
       <h2>מחירים</h2>
       <div class="pricing-cards">
@@ -124,7 +140,7 @@
       </div>
     </section>
 
-    <!-- BLOG PREVIEW SECTION -->
+    <!-- BLOG -->
     <section id="blog-preview" class="container blog-grid">
       <h2>עדכונים מהבלוג</h2>
       <div class="blog-cards">
