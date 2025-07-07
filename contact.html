@@ -7,30 +7,9 @@
   <meta name="description" content="השאירו פרטים ואנחנו ניצור איתכם קשר עכשיו להשכרת אוזניות Silent Disco TLV" />
   <link href="https://silentdiscotlv.co.il/contact.html" rel="canonical" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    /* Override minimal styles for contact page */
-    .contact-container {
-      background: #fff;
-      color: #333;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin: 3rem auto;
-      max-width: 600px;
-    }
-    .success-message {
-      color: #28a745;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-top: 1rem;
-    }
-    .btn-primary {
-      margin-top: 1rem;
-    }
-  </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <nav class="navbar container">
       <a class="logo" href="index.html"><img src="assets/images/sd_logo.png" alt="Silent Disco TLV Logo"/></a>
@@ -46,46 +25,49 @@
     </nav>
   </header>
 
+  <!-- CONTACT SECTION -->
   <main>
-    <section class="contact-container">
-      <h1>השאירו פרטים – ניצור איתכם קשר!</h1>
-      <form id="contact-form" class="form-grid">
-        <div class="form-group">
-          <label for="name">שם מלא:</label>
-          <input type="text" id="name" name="name" required placeholder="לדוגמה: יוסי כהן" />
-        </div>
-        <div class="form-group">
-          <label for="email">דוא"ל:</label>
-          <input type="email" id="email" name="email" required placeholder="example@domain.com" />
-        </div>
-        <div class="form-group">
-          <label for="phone">טלפון:</label>
-          <input type="tel" id="phone" name="phone" required placeholder="0XXXXXXXXX" />
-        </div>
-        <div class="form-group">
-          <label for="location">מיקום האירוע:</label>
-          <input type="text" id="location" name="location" required placeholder="לדוגמה: תל אביב" />
-        </div>
-        <div class="form-group">
-          <label for="event-details">פרטי האירוע:</label>
-          <textarea id="event-details" name="eventDetails" rows="4" required placeholder="של מי, סוג האירוע, מקום וכו'..."></textarea>
-        </div>
-        <div class="form-group">
-          <label for="event-date">תאריך האירוע:</label>
-          <input type="date" id="event-date" name="eventDate" required />
-        </div>
-        <div class="form-group">
-          <label for="guests">כמות אנשים:</label>
-          <input type="number" id="guests" name="guests" required min="1" max="500" placeholder="למשל: 50" />
-        </div>
-        <button type="submit" class="btn-primary btn-secondary">שלח</button>
-      </form>
-      <p id="success" class="success-message" style="display:none;">
-        תודה! הטופס נשלח בהצלחה.<br/>ניצור איתכם קשר בקרוב.
-      </p>
+    <section id="contact" class="container">
+      <h2 class="section-title">צור קשר</h2>
+      <article class="feature-card contact-card">
+        <p>השאירו פרטים ואנחנו ניצור איתכם קשר מידית.</p>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">שם מלא</label>
+            <input type="text" id="name" name="name" required placeholder="יוסי כהן" />
+          </div>
+          <div class="form-group">
+            <label for="email">דוא"ל</label>
+            <input type="email" id="email" name="email" required placeholder="example@domain.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">טלפון</label>
+            <input type="tel" id="phone" name="phone" required placeholder="05XXXXXXXX" />
+          </div>
+          <div class="form-group">
+            <label for="location">מיקום האירוע</label>
+            <input type="text" id="location" name="location" required placeholder="לדוגמה: תל אביב" />
+          </div>
+          <div class="form-group">
+            <label for="event-details">פרטי האירוע</label>
+            <textarea id="event-details" name="eventDetails" rows="4" required placeholder="סוג האירוע, קהל וכו'..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="event-date">תאריך האירוע</label>
+            <input type="date" id="event-date" name="eventDate" required />
+          </div>
+          <div class="form-group">
+            <label for="guests">כמות אנשים</label>
+            <input type="number" id="guests" name="guests" required min="1" max="500" placeholder="למשל: 50" />
+          </div>
+          <button type="submit" class="btn-primary btn-large">שלח</button>
+        </form>
+        <p id="success" class="success-message" style="display:none;">תודה! הטופס נשלח בהצלחה.<br/>ניצור איתכם קשר בקרוב.</p>
+      </article>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-container">
       <nav class="footer-nav">
@@ -100,35 +82,34 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS -->
   <script defer src="assets/js/main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('contact-form');
-      const successMsg = document.getElementById('success');
-      form.addEventListener('submit', async e => {
-        e.preventDefault();
-        const rawPhone = form.phone.value.replace(/[^0-9]/g, '');
-        if (!/^0\d{9}$/.test(rawPhone)) return alert('נא להזין מספר טלפון תקין בפורמט: 0XXXXXXXXX');
-        const data = {
-          name: form.name.value.trim(),
-          email: form.email.value.trim(),
-          phone: ''' + rawPhone,
-          location: form.location.value.trim(),
-          eventDetails: form.eventDetails.value.trim(),
-          eventDate: form.eventDate.value,
-          guests: form.guests.value
-        };
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return alert('נא להזין כתובת דוא"ל תקינה');
-        try {
-          const res = await fetch('https://hook.eu2.make.com/hjgji3rbb6011ueetx1rp7zrgidkfifq', {
-            method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
-          });
-          if (!res.ok) throw new Error();
-          form.style.display = 'none'; successMsg.style.display = 'block';
-        } catch {
-          alert('אירעה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.');
-        }
-      });
+    document.getElementById('contact-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const rawPhone = form.phone.value.replace(/[^0-9]/g, '');
+      if (!/^0\d{9}$/.test(rawPhone)) return alert('נא להזין מספר טלפון תקין');
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        phone: rawPhone,
+        location: form.location.value.trim(),
+        eventDetails: form.eventDetails.value.trim(),
+        eventDate: form.eventDate.value,
+        guests: form.guests.value
+      };
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return alert('נא להזין אימייל תקין');
+      try {
+        const res = await fetch('https://hook.eu2.make.com/hjgji3rbb6011ueetx1rp7zrgidkfifq', {
+          method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error();
+        form.style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+      } catch {
+        alert('אירעה שגיאה בשליחה. אנא נסו שוב אחרי כמה דקות.');
+      }
     });
   </script>
 </body>
