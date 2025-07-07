@@ -8,16 +8,56 @@
   <link href="https://silentdiscotlv.co.il/contact.html" rel="canonical" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    .contact-container { max-width: 600px; margin: 3rem auto; background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .contact-container h1 { margin-bottom: 1rem; }
-    .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
-    .form-group label { margin-bottom: 0.5rem; font-weight: 500; }
+    .contact-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .contact-container h1 {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .form-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #222;
+    }
     .form-group input,
-    .form-group textarea { padding: 0.75rem; border: 1px solid #ccc; border-radius: 0.5rem; font-size: 1rem; }
+    .form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
     .form-group input:focus,
-    .form-group textarea:focus { outline: none; border-color: #ff4081; }
-    .btn-submit { background: #ff4081; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 2rem; font-size: 1rem; cursor: pointer; }
-    .btn-submit:hover { background: #e73370; }
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff4081;
+    }
+    .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .success-message {
+      color: #28a745;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -28,8 +68,8 @@
       <ul class="nav-links">
         <li><a href="index.html">בית</a></li>
         <li><a href="about.html">אודות</a></li>
-        <li><a href="#">תכונות</a></li>
-        <li><a href="#">מחירים</a></li>
+        <li><a href="index.html#features-list">תכונות</a></li>
+        <li><a href="index.html#pricing">מחירים</a></li>
         <li><a href="blog.html">בלוג</a></li>
         <li><a href="contact.html">צור קשר</a></li>
       </ul>
@@ -39,7 +79,7 @@
   <main>
     <section class="contact-container">
       <h1>השאירו פרטים ואנחנו ניצור איתכם קשר עכשיו</h1>
-      <form id="contact-form" novalidate>
+      <form id="contact-form" class="form-grid">
         <div class="form-group">
           <label for="name">שם מלא:</label>
           <input type="text" id="name" name="name" required placeholder="לדוגמה: יוסי כהן" />
@@ -50,11 +90,11 @@
         </div>
         <div class="form-group">
           <label for="phone">טלפון:</label>
-          <input type="tel" id="phone" name="phone" required placeholder="05X-XXXXXXX" pattern="^[0-9]{10}$" />
+          <input type="tel" id="phone" name="phone" required placeholder="05XXXXXXXX" />
         </div>
         <div class="form-group">
           <label for="event-details">פרטי האירוע:</label>
-          <textarea id="event-details" name="eventDetails" rows="4" required placeholder="מסיבת יום הולדת, חתונה וכו'..."></textarea>
+          <textarea id="event-details" name="eventDetails" rows="4" required placeholder="של מי, סוג האירוע, מקום וכו'..."></textarea>
         </div>
         <div class="form-group">
           <label for="event-date">תאריך האירוע:</label>
@@ -64,7 +104,7 @@
           <label for="guests">כמות אנשים:</label>
           <input type="number" id="guests" name="guests" required min="1" max="500" placeholder="למשל: 50" />
         </div>
-        <button type="submit" class="btn-submit">שלח</button>
+        <button type="submit" class="btn-primary">שלח</button>
       </form>
     </section>
   </main>
@@ -74,8 +114,8 @@
       <nav class="footer-nav">
         <a href="index.html">בית</a>
         <a href="about.html">אודות</a>
-        <a href="features.html">תכונות</a>
-        <a href="pricing.html">מחירים</a>
+        <a href="index.html#features-list">תכונות</a>
+        <a href="index.html#pricing">מחירים</a>
         <a href="blog.html">בלוג</a>
         <a href="contact.html">צור קשר</a>
       </nav>
@@ -85,22 +125,41 @@
 
   <script defer src="assets/js/main.js"></script>
   <script>
-    // Validation & sanitization
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      const email = this.email.value.trim();
-      const phone = this.phone.value.replace(/[^0-9]/g, '');
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = this;
+      // sanitize and collect values
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.replace(/[^0-9]/g, ''),
+        eventDetails: form.eventDetails.value.trim(),
+        eventDate: form.eventDate.value,
+        guests: form.guests.value
+      };
+      // validation
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const phonePattern = /^\d{10}$/;
-      let valid = true;
-      if (!emailPattern.test(email)) {
+      const phonePattern = /^\d{10,}$/;
+      if (!emailPattern.test(data.email)) {
         alert('נא להזין כתובת דוא"ל תקינה');
-        valid = false;
+        return;
       }
-      if (!phonePattern.test(phone)) {
-        alert('נא להזין מספר טלפון תקין עם 10 ספרות');
-        valid = false;
+      if (!phonePattern.test(data.phone)) {
+        alert('נא להזין מספר טלפון תקין');
+        return;
       }
-      if (!valid) e.preventDefault();
+      try {
+        const response = await fetch('https://hook.eu2.make.com/hjgji3rbb6011ueetx1rp7zrgidkfifq', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!response.ok) throw new Error('Network response was not ok');
+        form.innerHTML = '<p class="success-message">הטופס נשלח בהצלחה!<br/>מייד ניצור איתכם קשר.</p>';
+      } catch (err) {
+        console.error(err);
+        alert('אירעה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.');
+      }
     });
   </script>
 </body>
