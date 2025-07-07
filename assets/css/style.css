@@ -211,19 +211,30 @@ footer {
 }
 
 .scroll-down {
-  display: block;
-  margin: 2rem auto 1rem;
-  font-size: 2rem;
-  color: #fff;
-  text-align: center;
-  animation: bounce 1.8s infinite;
-  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  animation: bounceDown 1.8s infinite;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+.scroll-down svg {
+  width: 48px;
+  height: 48px;
+  stroke: white;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.scroll-down:hover svg {
+  opacity: 1;
+  transform: translateY(4px);
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
 
 .video-section {
   text-align: center;
