@@ -1,123 +1,50 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html dir="rtl" lang="he">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>צור קשר – Silent Disco TLV</title>
   <meta name="description" content="השאירו פרטים ואנחנו ניצור איתכם קשר עכשיו להשכרת אוזניות Silent Disco TLV" />
   <link href="https://silentdiscotlv.co.il/contact.html" rel="canonical" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1f2022, #3a3c40);
-      color: #eee;
-      direction: rtl;
-      text-align: right;
-    }
+    /* Override minimal styles for contact page */
     .contact-container {
-      max-width: 600px;
-      margin: 3rem auto;
-      background: #222529;
+      background: #fff;
+      color: #333;
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-    }
-    .contact-container h1 {
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-      color: #ff4081;
-      text-align: center;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-    .form-group label {
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: #ccc;
-    }
-    .form-group input,
-    .form-group textarea {
-      padding: 0.75rem;
-      border: 2px solid #44474b;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      background: #2e3034;
-      color: #eee;
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #777;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #ff4081;
-      background: #393b3f;
-    }
-    .btn-primary {
-      display: block;
-      width: 100%;
-      padding: 0.9rem;
-      margin-top: 1rem;
-      background: #ff4081;
-      color: #fff;
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .btn-primary:hover {
-      background: #e73370;
-      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 3rem auto;
+      max-width: 600px;
     }
     .success-message {
-      color: #4caf50;
-      font-weight: 600;
+      color: #28a745;
       text-align: center;
+      font-weight: 600;
       font-size: 1.2rem;
       margin-top: 1rem;
     }
-    footer {
-      margin-top: 3rem;
-      padding: 1rem 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    .footer-nav a {
-      margin: 0 0.5rem;
-      color: #ff4081;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .footer-nav a:hover {
-      color: #fff;
-    }
-    @media (max-width: 640px) {
-      .contact-container {
-        margin: 1.5rem;
-        padding: 1.5rem;
-      }
-      .contact-container h1 {
-        font-size: 1.75rem;
-      }
+    .btn-primary {
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html"><img src="assets/images/sd_logo.png" alt="Silent Disco TLV Logo"/></a>
+      <div class="nav-toggle" id="mobile-menu"><span>&#9776;</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">בית</a></li>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="index.html#features-list">תכונות</a></li>
+        <li><a href="index.html#pricing">מחירים</a></li>
+        <li><a href="blog.html">בלוג</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section class="contact-container">
@@ -151,7 +78,7 @@
           <label for="guests">כמות אנשים:</label>
           <input type="number" id="guests" name="guests" required min="1" max="500" placeholder="למשל: 50" />
         </div>
-        <button type="submit" class="btn-primary">שלח</button>
+        <button type="submit" class="btn-primary btn-secondary">שלח</button>
       </form>
       <p id="success" class="success-message" style="display:none;">
         תודה! הטופס נשלח בהצלחה.<br/>ניצור איתכם קשר בקרוב.
@@ -160,61 +87,49 @@
   </main>
 
   <footer>
-    <nav class="footer-nav">
-      <a href="index.html">בית</a>∙
-      <a href="about.html">אודות</a>∙
-      <a href="index.html#features-list">תכונות</a>∙
-      <a href="index.html#pricing">מחירים</a>∙
-      <a href="blog.html">בלוג</a>∙
-      <a href="contact.html">צור קשר</a>
-    </nav>
-    <p>© 2025 Silent Disco TLV. כל הזכויות שמורות.</p>
+    <div class="container footer-container">
+      <nav class="footer-nav">
+        <a href="index.html">בית</a>
+        <a href="about.html">אודות</a>
+        <a href="index.html#features-list">תכונות</a>
+        <a href="index.html#pricing">מחירים</a>
+        <a href="blog.html">בלוג</a>
+        <a href="contact.html">צור קשר</a>
+      </nav>
+      <p>© 2025 Silent Disco TLV. כל הזכויות שמורות.</p>
+    </div>
   </footer>
 
+  <script defer src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('contact-form');
       const successMsg = document.getElementById('success');
-
       form.addEventListener('submit', async e => {
         e.preventDefault();
         const rawPhone = form.phone.value.replace(/[^0-9]/g, '');
-        const phonePattern = /^0\d{9}$/;
-        if (!phonePattern.test(rawPhone)) {
-          alert('נא להזין מספר טלפון תקין בפורמט: 0XXXXXXXXX');
-          return;
-        }
-        const phoneForSheet = '\'' + rawPhone;
+        if (!/^0\d{9}$/.test(rawPhone)) return alert('נא להזין מספר טלפון תקין בפורמט: 0XXXXXXXXX');
         const data = {
           name: form.name.value.trim(),
           email: form.email.value.trim(),
-          phone: phoneForSheet,
+          phone: ''' + rawPhone,
           location: form.location.value.trim(),
           eventDetails: form.eventDetails.value.trim(),
           eventDate: form.eventDate.value,
           guests: form.guests.value
         };
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(data.email)) {
-          alert('נא להזין כתובת דוא"ל תקינה');
-          return;
-        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return alert('נא להזין כתובת דוא"ל תקינה');
         try {
           const res = await fetch('https://hook.eu2.make.com/hjgji3rbb6011ueetx1rp7zrgidkfifq', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+            method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
           });
-          if (!res.ok) throw new Error('Network error');
-          form.style.display = 'none';
-          successMsg.style.display = 'block';
-        } catch (err) {
-          console.error(err);
+          if (!res.ok) throw new Error();
+          form.style.display = 'none'; successMsg.style.display = 'block';
+        } catch {
           alert('אירעה שגיאה בשליחת הטופס. אנא נסו שוב מאוחר יותר.');
         }
       });
     });
   </script>
-
 </body>
 </html>
