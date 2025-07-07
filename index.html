@@ -1,141 +1,153 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="he">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות</title>
-<meta content="Silent Disco TLV – עושים מסיבות בלי רעש. השכרת אוזניות אלחוטיות Hi-Fi עם סוללה ל-12 שעות, ערוצים נפרדים וניידות מלאה." name="description"/>
-<link href="https://silentdiscotlv.co.il/index.html" rel="canonical"/>
-<meta content="index,follow" name="robots"/>
-<!-- Open Graph & Twitter -->
-<meta content="Silent Disco TLV" property="og:site_name"/>
-<meta content="Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות" property="og:title"/>
-<meta content="Silent Disco TLV – עושים מסיבות בלי רעש. השכרת אוזניות אלחוטיות Hi-Fi עם סוללה ל-12 שעות, ערוצים נפרדים וניידות מלאה." property="og:description"/>
-<meta content="https://silentdiscotlv.co.il/assets/images/hero.jpg" property="og:image"/>
-<meta content="https://silentdiscotlv.co.il/index.html" property="og:url"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<!-- CSS ראשי -->
-<link as="style" href="assets/css/style.css" rel="preload"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<!-- תיקונים ספציפיים ל־Index -->
-<style>
-    /* Hero עם overlay כדי לטקסט להבליט */
-    #hero {
-      position: relative;
-      background: url('assets/images/hero.jpg') center/cover no-repeat;
-      height: 90vh;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: #fff;
-      padding: 0 1rem;
-    }
-    .hero-content h1, .hero-content p {
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-
-    /* Pricing Preview – הסרת תמונת שבורה וריווח */
-    #pricing-preview .section-subtitle {
-      margin: 1rem 0;
-    }
-    #pricing-preview .cta-wrap {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    /* כפתורים גדולים – ריווח תחתון */
-    .btn-large {
-      margin: 1.5rem auto;
-    }
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות</title>
+  <meta name="description" content="Silent Disco TLV – עושים מסיבות בלי רעש. השכרת אוזניות Hi-Fi ל-12 שעות, שלושה ערוצים, ניידות מלאה וחוויית קול מקצועית."/>
+  <link href="https://silentdiscotlv.co.il/index.html" rel="canonical"/>
+  <meta name="robots" content="index,follow"/>
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Silent Disco TLV"/>
+  <meta property="og:title" content="Silent Disco TLV – השכרת אוזניות אלחוטיות למסיבות"/>
+  <meta property="og:description" content="Silent Disco TLV – השכרת אוזניות Hi-Fi ללא רעש ל-12 שעות, ערוצים נפרדים וניידות מלאה."/>
+  <meta property="og:image" content="https://silentdiscotlv.co.il/assets/images/hero.jpg"/>
+  <meta property="og:url" content="https://silentdiscotlv.co.il/index.html"/>
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* Share button styling */
+    .share-btn { background: none; border: none; cursor: pointer; padding: 0; margin-left: 1rem; }
+    .share-btn img { width: 24px; height: auto; }
+    /* Section padding */
+    section { padding: 4rem 1rem; }
+    @media (min-width: 768px) { section { padding: 6rem 2rem; } }
   </style>
 </head>
 <body>
-<!-- NAVBAR -->
-<header>
-<nav class="navbar">
-<div class="container">
-<a class="logo" href="index.html">Silent Disco</a>
-<button aria-label="פתיחת תפריט" class="hamburger">☰</button>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar container">
+      <a class="logo" href="index.html"><img src="assets/images/sd_logo.png" alt="Silent Disco TLV Logo"/></a>
+      <div class="nav-toggle" id="mobile-menu"><span>&#9776;</span></div>
+      <ul class="nav-links">
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="#features-list">תכונות</a></li>
+        <li><a href="#pricing">מחירים</a></li>
+        <li><a href="#blog-preview">בלוג</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+        <li><button class="share-btn" aria-label="שתף"><img src="assets/icons/share.svg" alt="שתף"/></button></li>
+      </ul>
+    </nav>
+  </header>
 
-<ul class="nav-links">
-<li><a href="index.html">בית</a></li>
-<li><a href="features.html">תכונות</a></li>
-<li><a href="pricing.html">מחירים</a></li>
-<li><a href="blog.html">בלוג</a></li>
-<li><a href="contact.html">צור קשר</a></li>
-</ul>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero" style="background: url('assets/images/hero.jpg') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center;">
+      <div class="container hero-content">
+        <h1>Silent Disco TLV</h1>
+        <p>חוויה אלחוטית בלי רעש – מסיבות עם אוזניות Hi-Fi לכל המשתתפים.</p>
+        <a class="btn-primary" href="contact.html">השכרה עכשיו</a>
+      </div>
+    </section>
 
-</div>
-</nav>
-</header>
-<main>
-<!-- HERO SECTION -->
-<section id="hero">
-<div class="hero-content container">
-<h1 class="hero-title">Silent Disco TLV</h1>
-<p class="hero-subtitle">חוויה אלחוטית בלי רעש – מסיבות עם אוזניות Hi-Fi לכל המשתתפים.</p>
-<a class="btn-primary btn-large" href="contact.html">השכרה עכשיו</a>
-</div>
-</section>
-<!-- FEATURES PREVIEW -->
-<section class="container features-grid" id="features-preview">
-<h2 class="sr-only">התכונות המובילות שלנו</h2>
-<!-- כרטיסים... כמו קודם -->
-<a class="btn-secondary btn-center" href="features.html">לפרטי התכונות</a>
-</section>
-<!-- PRICING PREVIEW -->
-<section class="container" id="pricing-preview">
-<h2 class="section-title">חבילות השכרה</h2>
-<p class="section-subtitle">
-        החל מחבילה בסיסית ועד חבילות VIP מותאמות לאירועים גדולים.
-      </p>
-<div class="cta-wrap">
-<a class="btn-primary btn-large" href="pricing.html">לפרטי המחירים</a>
-</div>
-</section>
-<!-- BLOG PREVIEW -->
-<section class="container" id="blog-preview">
-<h2 class="section-title">מה קורה בבלוג שלנו?</h2>
-<div class="blog-cards">
-<article class="blog-card">
-<h3>איך לתכנן מסיבת Silent Disco?</h3>
-<p>טיפים מקצועיים לתכנון חוויה מושלמת בלי הרעש המסורתי.</p>
-<a class="btn-small" href="blog.html">לקריאה</a>
-</article>
-</div>
-</section>
-</main>
-<!-- FOOTER -->
-<footer>
-<div class="container footer-container">
+    <!-- FEATURES SECTION -->
+    <section id="features-list" class="container features-grid">
+      <h2>התכונות שלנו</h2>
+      <article class="feature-card">
+        <img src="assets/icons/hifi.svg" alt="איכות Hi-Fi עילאית" width="80" height="80" loading="lazy"/>
+        <h3>איכות Hi-Fi עילאית</h3>
+        <p>שמע נקי ומדויק באיזון תדרים מקצועי – חוויה כמו באולפן הקלטות.</p>
+      </article>
+      <article class="feature-card">
+        <img src="assets/icons/battery.svg" alt="סוללה חזקה" width="80" height="80" loading="lazy"/>
+        <h3>סוללה ל־12 שעות</h3>
+        <p>טעינה מהירה וביצועים יציבים לכל אורך האירוע – אין צורך להטעין שוב.</p>
+      </article>
+      <article class="feature-card">
+        <img src="assets/icons/channels.svg" alt="שידור מרובה ערוצים" width="80" height="80" loading="lazy"/>
+        <h3>שידור מרובה ערוצים</h3>
+        <p>תמיכה בשלושה ערוצים נפרדים – כל משתתף בוחר לעצמו בלחיצה אחת.</p>
+      </article>
+      <article class="feature-card">
+        <img src="assets/icons/mobile.svg" alt="ניידות מלאה" width="80" height="80" loading="lazy"/>
+        <h3>ניידות מלאה</h3>
+        <p>התקנה מהירה ופשטות תפעול – מושלם לאירועים בתוך הבית ובחוץ, בלי צורך ברישיון רעש.</p>
+      </article>
+      <article class="feature-card">
+        <img src="assets/icons/easy.svg" alt="תפעול אינטואיטיבי" width="80" height="80" loading="lazy"/>
+        <h3>תפעול אינטואיטיבי</h3>
+        <p>ממשק ברור וידידותי – מתאים גם למי שלא בקיא בטכנולוגיה.</p>
+      </article>
+    </section>
 
-<nav aria-label="קישורים מהירים" class="footer-nav">
-<a href="index.html">בית</a>
-<a href="about.html">אודות</a>
-<a href="features.html">תכונות</a>
-<a href="pricing.html">מחירים</a>
-<a href="blog.html">בלוג</a>
-<a href="contact.html">צור קשר</a>
-</nav>
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="container pricing-grid">
+      <h2>מחירים</h2>
+      <div class="pricing-cards">
+        <article class="pricing-card">
+          <h3>חבילה בסיסית</h3>
+          <p>20 אוזניות, 1 משדר, סוללה ל-8 שעות</p>
+          <p class="price">₪1,200</p>
+          <a class="btn-secondary" href="contact.html">להזמנה</a>
+        </article>
+        <article class="pricing-card">
+          <h3>חבילה מתקדמת</h3>
+          <p>50 אוזניות, 2 משדרים, סוללה ל-12 שעות</p>
+          <p class="price">₪2,800</p>
+          <a class="btn-secondary" href="contact.html">להזמנה</a>
+        </article>
+        <article class="pricing-card">
+          <h3>חבילה פרימיום</h3>
+          <p>100 אוזניות, 3 משדרים, סוללה ל-16 שעות</p>
+          <p class="price">₪5,000</p>
+          <a class="btn-secondary" href="contact.html">להזמנה</a>
+        </article>
+      </div>
+    </section>
 
-<p class="footer-copy">© 2025 Silent Disco. כל הזכויות שמורות.</p>
-</div>
-</footer>
-<!-- SCRIPTS -->
-<script defer="" src="assets/js/main.js"></script>
+    <!-- BLOG PREVIEW SECTION -->
+    <section id="blog-preview" class="container blog-grid">
+      <h2>עדכונים מהבלוג</h2>
+      <div class="blog-cards">
+        <article class="blog-card">
+          <img src="assets/images/blog1.jpg" alt="איך להתכונן למסיבת Silent Disco" loading="lazy"/>
+          <h3>איך להתכונן למסיבת Silent Disco</h3>
+          <p>טיפים לבחירת מיקום, מוזיקה וציוד למסיבה בלתי נשכחת.</p>
+          <a href="blog/post1.html">קרא עוד</a>
+        </article>
+        <article class="blog-card">
+          <img src="assets/images/blog2.jpg" alt="האוזניות הטובות ביותר למסיבות" loading="lazy"/>
+          <h3>האוזניות הטובות ביותר למסיבות</h3>
+          <p>השוואה בין דגמים פופולריים כדי למצוא את המתאימות לך.</p>
+          <a href="blog/post2.html">קרא עוד</a>
+        </article>
+        <article class="blog-card">
+          <img src="assets/images/blog3.jpg" alt="יתרונות המוסיקה הנטענת" loading="lazy"/>
+          <h3>יתרונות המוסיקה הנטענת</h3>
+          <p>למה יומן שירים במשדר משנה את חוויית המסיבה.</p>
+          <a href="blog/post3.html">קרא עוד</a>
+        </article>
+      </div>
+      <a class="btn-secondary" href="blog.html">לכל הפוסטים</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <nav class="footer-nav">
+        <a href="about.html">אודות</a>
+        <a href="#features-list">תכונות</a>
+        <a href="#pricing">מחירים</a>
+        <a href="#blog-preview">בלוג</a>
+        <a href="contact.html">צור קשר</a>
+      </nav>
+      <p>© 2025 Silent Disco TLV. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <script defer src="assets/js/main.js"></script>
 </body>
 </html>
