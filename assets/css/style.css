@@ -1,4 +1,4 @@
-/* Base Reset */
+/* ---------------- Base Reset ---------------- */
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +27,8 @@ a {
   max-width: 1200px;
   margin: 0 auto;
 }
-/* Typography */
+
+/* ---------------- Typography ---------------- */
 h1, h2, h3 {
   color: #222;
   margin-bottom: 1rem;
@@ -36,7 +37,8 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 p { margin-bottom: 1rem; }
-/* Navbar */
+
+/* ---------------- Navbar ---------------- */
 .navbar {
   display: flex;
   align-items: center;
@@ -60,7 +62,8 @@ p { margin-bottom: 1rem; }
   display: block;
   cursor: pointer;
 }
-/* Mobile Menu Open */
+
+/* --- Mobile Menu Open --- */
 .nav-open .nav-links {
   display: flex;
   flex-direction: column;
@@ -72,12 +75,14 @@ p { margin-bottom: 1rem; }
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   padding: 1rem;
 }
-/* Desktop Nav */
+
+/* --- Desktop Nav --- */
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
   .nav-links { display: flex; }
 }
-/* Buttons */
+
+/* ---------------- Buttons ---------------- */
 .btn-primary, .btn-secondary {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -101,17 +106,51 @@ p { margin-bottom: 1rem; }
   background: #ff4081;
   color: #fff;
 }
-/* Hero */
+
+/* ---------------- Hero ---------------- */
 .hero {
   position: relative;
-  color: #fff;
-  text-align: center;
+  background: url('assets/images/hero.jpg') center/cover no-repeat;
+  min-height: 80vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
-.hero .btn-primary { margin-top: 1rem; }
-/* Features Grid */
+.hero-content {
+  z-index: 2;
+  position: relative;
+  color: #222; /* טקסט כהה לקריאות */
+}
+.hero .btn-primary {
+  margin-top: 1rem;
+}
+
+/* ---------------- Scroll Down Arrow ---------------- */
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  animation: bounceDown 1.8s infinite;
+}
+.scroll-down svg {
+  width: 48px;
+  height: 48px;
+  stroke: #222;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.scroll-down:hover svg {
+  opacity: 1;
+  transform: translateY(4px);
+}
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ---------------- Features ---------------- */
 .features-grid {
   display: grid;
   gap: 2rem;
@@ -136,7 +175,8 @@ p { margin-bottom: 1rem; }
 .feature-card img {
   margin-bottom: 1rem;
 }
-/* Pricing Grid */
+
+/* ---------------- Pricing ---------------- */
 .pricing-grid .pricing-cards {
   display: grid;
   gap: 2rem;
@@ -158,7 +198,8 @@ p { margin-bottom: 1rem; }
   margin: 1rem 0;
   color: #ff4081;
 }
-/* Blog Grid */
+
+/* ---------------- Blog ---------------- */
 .blog-grid .blog-cards {
   display: grid;
   gap: 2rem;
@@ -189,7 +230,20 @@ p { margin-bottom: 1rem; }
   text-align: center;
   font-weight: 500;
 }
-/* Footer */
+
+/* ---------------- Video Section ---------------- */
+.video-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #f8f8f8;
+}
+.video-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------------- Footer ---------------- */
 footer {
   background: #222;
   color: #fff;
@@ -210,44 +264,5 @@ footer {
   font-weight: 500;
 }
 
-.scroll-down {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
-  animation: bounceDown 1.8s infinite;
-}
-
-.scroll-down svg {
-  width: 48px;
-  height: 48px;
-  stroke: white;
-  opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.scroll-down:hover svg {
-  opacity: 1;
-  transform: translateY(4px);
-}
-
-@keyframes bounceDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
-
-
-.video-section {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: #f8f8f8;
-}
-
-.video-wrapper {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-
-/* Utility */
+/* ---------------- Utilities ---------------- */
 .hidden { display: none !important; }
