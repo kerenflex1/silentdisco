@@ -1,96 +1,114 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he">
+<html dir='rtl' lang='he'>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>צור קשר – Silent Disco TLV</title>
-  <meta name="description" content="השאירו פרטים ואנחנו ניצור איתכם קשר עכשיו להשכרת אוזניות Silent Disco TLV" />
-  <link href="https://silentdiscotlv.co.il/contact.html" rel="canonical" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name='description' content='השאירו פרטים ואנחנו ניצור איתכם קשר עכשיו להשכרת אוזניות Silent Disco TLV' />
+  <link href='https://silentdiscotlv.co.il/contact.html' rel='canonical' />
+  <link rel='stylesheet' href='assets/css/style.css' />
+  <style>
+    .contact-card { margin: 3rem auto; max-width: 700px; }
+    .contact-card .form-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+      .contact-card .form-grid { grid-template-columns: 1fr 1fr; }
+      .contact-card .form-group.full-width { grid-column: span 2; }
+    }
+    .contact-card label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #222;
+    }
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .contact-card input:focus,
+    .contact-card textarea:focus {
+      outline: none;
+      border-color: #ff4081;
+    }
+    .contact-card .btn-primary {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      font-weight: 600;
+      color: #28a745;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <nav class="navbar container">
-      <a class="logo" href="index.html"><img src="assets/images/sd_logo.png" alt="Silent Disco TLV Logo"/></a>
-      <div class="nav-toggle" id="mobile-menu"><span>&#9776;</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html">בית</a></li>
-        <li><a href="about.html">אודות</a></li>
-        <li><a href="index.html#features-list">תכונות</a></li>
-        <li><a href="index.html#pricing">מחירים</a></li>
-        <li><a href="blog.html">בלוג</a></li>
-        <li><a href="contact.html">צור קשר</a></li>
+    <nav class='navbar container'>
+      <a class='logo' href='index.html'><img src='assets/images/sd_logo.png' alt='Silent Disco TLV Logo' /></a>
+      <div class='nav-toggle' id='mobile-menu'><span>&#9776;</span></div>
+      <ul class='nav-links'>
+        <li><a href='index.html'>בית</a></li>
+        <li><a href='about.html'>אודות</a></li>
+        <li><a href='index.html#features-list'>תכונות</a></li>
+        <li><a href='index.html#pricing'>מחירים</a></li>
+        <li><a href='blog.html'>בלוג</a></li>
+        <li><a href='contact.html'>צור קשר</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- CONTACT SECTION -->
   <main>
-    <section id="contact" class="container">
-      <h2 class="section-title">צור קשר</h2>
-      <article class="feature-card contact-card">
+    <section id='contact' class='container'>
+      <h2 class='section-title'>צור קשר</h2>
+      <article class='feature-card contact-card'>
         <p>השאירו פרטים ואנחנו ניצור איתכם קשר מידית.</p>
-        <form id="contact-form">
-          <div class="form-group">
-            <label for="name">שם מלא</label>
-            <input type="text" id="name" name="name" required placeholder="יוסי כהן" />
-          </div>
-          <div class="form-group">
-            <label for="email">דוא"ל</label>
-            <input type="email" id="email" name="email" required placeholder="example@domain.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone">טלפון</label>
-            <input type="tel" id="phone" name="phone" required placeholder="05XXXXXXXX" />
-          </div>
-          <div class="form-group">
-            <label for="location">מיקום האירוע</label>
-            <input type="text" id="location" name="location" required placeholder="לדוגמה: תל אביב" />
-          </div>
-          <div class="form-group">
-            <label for="event-details">פרטי האירוע</label>
-            <textarea id="event-details" name="eventDetails" rows="4" required placeholder="סוג האירוע, קהל וכו'..."></textarea>
-          </div>
-          <div class="form-group">
-            <label for="event-date">תאריך האירוע</label>
-            <input type="date" id="event-date" name="eventDate" required />
-          </div>
-          <div class="form-group">
-            <label for="guests">כמות אנשים</label>
-            <input type="number" id="guests" name="guests" required min="1" max="500" placeholder="למשל: 50" />
-          </div>
-          <button type="submit" class="btn-primary btn-large">שלח</button>
+        <form id='contact-form' class='form-grid'>
+          <div class='form-group'><label for='name'>שם מלא</label><input type='text' id='name' name='name' required placeholder='יוסי כהן' /></div>
+          <div class='form-group'><label for='email'>דוא"ל</label><input type='email' id='email' name='email' required placeholder='example@domain.com' /></div>
+          <div class='form-group'><label for='phone'>טלפון</label><input type='tel' id='phone' name='phone' required placeholder='05XXXXXXXX' /></div>
+          <div class='form-group full-width'><label for='location'>מיקום האירוע</label><input type='text' id='location' name='location' required placeholder='לדוגמה: תל אביב' /></div>
+          <div class='form-group full-width'><label for='event-details'>פרטי האירוע</label><textarea id='event-details' name='eventDetails' rows='4' required placeholder='סוג האירוע, קהל וכו&#39;...'></textarea></div>
+          <div class='form-group'><label for='event-date'>תאריך האירוע</label><input type='date' id='event-date' name='eventDate' required /></div>
+          <div class='form-group'><label for='guests'>כמות אנשים</label><input type='number' id='guests' name='guests' required min='1' max='500' placeholder='למשל: 50' /></div>
+          <div class='form-group full-width'><button type='submit' class='btn-primary btn-large'>שלח</button></div>
         </form>
-        <p id="success" class="success-message" style="display:none;">תודה! הטופס נשלח בהצלחה.<br/>ניצור איתכם קשר בקרוב.</p>
+        <p id='success' class='success-message'>תודה! הטופס נשלח בהצלחה.<br/>ניצור איתכם קשר בקרוב.</p>
       </article>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container footer-container">
-      <nav class="footer-nav">
-        <a href="index.html">בית</a>
-        <a href="about.html">אודות</a>
-        <a href="index.html#features-list">תכונות</a>
-        <a href="index.html#pricing">מחירים</a>
-        <a href="blog.html">בלוג</a>
-        <a href="contact.html">צור קשר</a>
+    <div class='container footer-container'>
+      <nav class='footer-nav'>
+        <a href='index.html'>בית</a>
+        <a href='about.html'>אודות</a>
+        <a href='index.html#features-list'>תכונות</a>
+        <a href='index.html#pricing'>מחירים</a>
+        <a href='blog.html'>בלוג</a>
+        <a href='contact.html'>צור קשר</a>
       </nav>
       <p>© 2025 Silent Disco TLV. כל הזכויות שמורות.</p>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script defer src="assets/js/main.js"></script>
+  <script defer src='assets/js/main.js'></script>
   <script>
-    document.getElementById('contact-form').addEventListener('submit', async e => {
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const form = e.target;
-      const rawPhone = form.phone.value.replace(/[^0-9]/g, '');
+      var form = this;
+      var rawPhone = form.phone.value.replace(/[^0-9]/g, '');
       if (!/^0\d{9}$/.test(rawPhone)) return alert('נא להזין מספר טלפון תקין');
-      const data = {
+      var data = {
         name: form.name.value.trim(),
         email: form.email.value.trim(),
         phone: rawPhone,
@@ -101,14 +119,16 @@
       };
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return alert('נא להזין אימייל תקין');
       try {
-        const res = await fetch('https://hook.eu2.make.com/hjgji3rbb6011ueetx1rp7zrgidkfifq', {
-          method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data)
+        var res = await fetch('https://hook.eu2.make.com/hjgji3rbb6011ueetx1rp7zrgidkfifq', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
         });
-        if (!res.ok) throw new Error();
+        if (!res.ok) throw '';
         form.style.display = 'none';
         document.getElementById('success').style.display = 'block';
       } catch {
-        alert('אירעה שגיאה בשליחה. אנא נסו שוב אחרי כמה דקות.');
+        alert('אירעה שגיאה בשליחה. אנא נסו שוב לאחר כמה דקות.');
       }
     });
   </script>
